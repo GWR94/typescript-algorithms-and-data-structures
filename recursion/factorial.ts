@@ -1,12 +1,14 @@
-function factorial(num) {
+function factorialRecursive(num: number) {
 	/**
-	 *
+	 * Recursive function to get the factorial of num,
+	 * which is the product of all the previous numbers
+	 * up to 1
 	 */
 	if (num === 1 || num === 0) return 1;
 	return num * factorial(num - 1);
 }
 
-function factorialIterative(num) {
+function factorialIterative(num: number) {
 	/**
 	 * Set total to 1, and num to the input of the function,
 	 * then loop down up until we get to 2. Each iteration we
@@ -20,4 +22,5 @@ function factorialIterative(num) {
 	return total;
 }
 
-console.log(factorial(4), factorialIterative(4));
+console.log(factorialRecursive(5));
+console.log(factorialIterative(10));

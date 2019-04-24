@@ -1,4 +1,4 @@
-function sumZero(arr: number[]) {
+function sumZero(arr: Array<number>) {
 	/**
 	 * Set the left variable to 0 (for first index), and set
 	 * right to the length of array - 1 (the last index).

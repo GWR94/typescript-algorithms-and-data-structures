@@ -1,4 +1,4 @@
-function reverse(str) {
+function reverse(str: string) {
 	/**
 	 * If the length of the string is 1 or less, then
 	 * there is no need to reverse it at all.

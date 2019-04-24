@@ -1,5 +1,5 @@
-function stringSearch(str, substr) {
-	let matches = 0;
+function stringSearch(str: string, substr: string) {
+	let matches: number = 0;
 	for (let i = 0; i < str.length; i++) {
 		if (str[i] === substr[0]) {
 			for (let j = 0; j < substr.length; j++) {

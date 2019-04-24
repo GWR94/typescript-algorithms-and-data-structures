@@ -1,4 +1,4 @@
-const states = [
+let states: Array<string> = [
 	"Alabama",
 	"Alaska",
 	"American Samoa",
@@ -60,20 +60,4 @@ const states = [
 	"Wyoming"
 ];
 
-console.log(states.includes("Indiana"));
-console.log(states.indexOf("Indiana"));
-/**
- * A linear search is where you have a data structure, and iterate through
- * all of the items in that structure, until you find the item or get to the
- * end of the data structure. Built in functions like indexOf and includes
- * all use linear searching.
- */
-
-function linearSearch(arr, val) {
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] === val) return i;
-	}
-	return -1;
-}
-
-console.log(linearSearch(states, "Indiana"));
+export default states;

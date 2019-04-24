@@ -1,5 +1,7 @@
-function bubbleSort(arr) {
-	let noSwaps;
+import swap from "../../utils/swap";
+
+function bubbleSort(arr: Array<any>) {
+	let noSwaps: boolean;
 	for (let i = arr.length; i > 0; i--) {
 		noSwaps = true;
 		for (let j = 0; j < i - 1; j++) {
@@ -13,9 +15,5 @@ function bubbleSort(arr) {
 	}
 	return arr;
 }
-
-const swap = (arr, idx1, idx2) => {
-	[arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
-};
 
 console.log(bubbleSort([4, 2, 5, 1, 3]));

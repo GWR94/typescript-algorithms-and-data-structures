@@ -1,4 +1,4 @@
-function insertionSort(arr) {
+function insertionSort(arr: Array<any>) {
 	/**
 	 * We set i to be 1 because we are using 0 to be the
 	 * baseline for the sorted array.
