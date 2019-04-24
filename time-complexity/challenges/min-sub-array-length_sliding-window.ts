@@ -1,8 +1,8 @@
-function minSubArrayLen(arr, num) {
-	let count = 1;
+function minSubArrayLen(arr: Array<number>, num: number) {
+	let count: number = 1;
 	while (count < arr.length) {
-		let total = 0;
-		for (let i = 0; i < count; i++) {
+		let total: number = 0;
+		for (let i: number = 0; i < count; i++) {
 			total += arr[i];
 			if (arr[i] > num) {
 				return 1;
@@ -11,7 +11,6 @@ function minSubArrayLen(arr, num) {
 				return count;
 			}
 		}
-		total;
 		for (let i = count; i < arr.length; i++) {
 			total = total - arr[i - count] + arr[i];
 			if (total === num) {

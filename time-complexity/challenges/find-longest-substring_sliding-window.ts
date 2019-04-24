@@ -1,3 +1,3 @@
 function findLongestSubstring(str) {
-	//! kjlskdjfkld
+	let left: number = #;
 }
