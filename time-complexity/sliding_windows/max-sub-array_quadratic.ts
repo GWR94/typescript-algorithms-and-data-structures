@@ -34,4 +34,4 @@ function maxSubArrayQuad(arr: number[], num: number) {
 	return max;
 }
 
-maxSubArrayQuad([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);
+console.log(maxSubArrayQuad([2, 6, 9, 2, 1, 8, 5, 6, 3], 3));
