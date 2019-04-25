@@ -1,4 +1,4 @@
-function insertionSort(arr: Array<any>) {
+function insertionSort(arr: any[]) {
 	/**
 	 * We set i to be 1 because we are using 0 to be the
 	 * baseline for the sorted array.
@@ -9,7 +9,7 @@ function insertionSort(arr: Array<any>) {
 		 * save it for when we find the position of where it
 		 * should be once the array is sorted.
 		 */
-		let current = arr[i];
+		const current = arr[i];
 		/**
 		 * We need to do a backwards loop from j being i-1 all
 		 * the time that j is larger or equal to zero. We also
@@ -19,7 +19,8 @@ function insertionSort(arr: Array<any>) {
 		 * value is higher than current so we can place "current"
 		 * in its correct index.
 		 */
-		for (var j = i - 1; j >= 0 && current < arr[j]; j--) {
+		let j;
+		for (j = i - 1; j >= 0 && current < arr[j]; j--) {
 			/**
 			 * If current is a smaller value than the value which
 			 * is returned from the index of j in arr, then we need
@@ -37,8 +38,7 @@ function insertionSort(arr: Array<any>) {
 		 */
 		arr[j + 1] = current;
 	}
-	arr;
-	return arr;
+	return console.log(arr);
 }
 
 insertionSort([6, 3, 2, 1, 111, 25, 45]);

@@ -1,4 +1,4 @@
-function minSubArrayLen(arr: Array<number>, num: number) {
+function minSubArrayLen(arr: number[], num: number) {
 	let count: number = 1;
 	while (count < arr.length) {
 		let total: number = 0;

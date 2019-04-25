@@ -1,6 +1,6 @@
 import states from "./data/states";
 
-function binarySearch(arr: Array<any>, val: any) {
+function binarySearch(arr: any[], val: any) {
 	let left: number = 0;
 	let right: number = arr.length - 1;
 	let mid: number = Math.floor((left + right) / 2);

@@ -25,7 +25,9 @@ countDown(10);
  * sequence must add together to get the total (3: 1+2+3=6)
  */
 function sumRange(num: number) {
-	if (num === 1) return 1;
+	if (num === 1) {
+		return 1;
+	}
 	return num + sumRange(num - 1);
 }
 

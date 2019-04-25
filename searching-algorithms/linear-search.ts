@@ -7,12 +7,13 @@ import states from "./data/states";
  * all use linear searching.
  */
 
-function linearSearch(arr: Array<any>, val: any) {
+function linearSearch(arr: any[], val: any) {
 	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] === val)
+		if (arr[i] === val) {
 			return console.log(
 				`${val} found at index ${i} and took ${i + 1} iterations`
 			);
+		}
 	}
 	return console.log(`${val} not found in array`);
 }

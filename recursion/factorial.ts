@@ -4,7 +4,9 @@ function factorialRecursive(num: number) {
 	 * which is the product of all the previous numbers
 	 * up to 1
 	 */
-	if (num === 1 || num === 0) return 1;
+	if (num === 1 || num === 0) {
+		return 1;
+	}
 	return num * factorial(num - 1);
 }
 

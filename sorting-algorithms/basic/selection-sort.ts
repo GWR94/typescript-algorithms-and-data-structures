@@ -12,7 +12,6 @@ function selectionSort(arr: number[]) {
 			swap(arr, i, smallest);
 		}
 	}
-	arr;
 	return arr;
 }
 

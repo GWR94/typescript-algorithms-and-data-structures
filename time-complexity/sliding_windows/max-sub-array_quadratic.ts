@@ -1,9 +1,11 @@
-function maxSubArrayQuad(arr: Array<number>, num: number) {
+function maxSubArrayQuad(arr: number[], num: number) {
 	/**
 	 * If the number is larger than the array length, there can be
 	 * no subarray that would fit, so return null
 	 */
-	if (num > arr.length) return null;
+	if (num > arr.length) {
+		return null;
+	}
 	/**
 	 * Set max to -Infinity so any sum will always be larger than it
 	 */

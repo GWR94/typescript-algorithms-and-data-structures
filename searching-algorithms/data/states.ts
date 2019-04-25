@@ -1,4 +1,4 @@
-let states: Array<string> = [
+const states: string[] = [
 	"Alabama",
 	"Alaska",
 	"American Samoa",

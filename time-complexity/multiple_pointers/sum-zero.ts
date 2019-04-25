@@ -1,4 +1,4 @@
-function sumZero(arr: Array<number>) {
+function sumZero(arr: number[]) {
 	/**
 	 * Set the left variable to 0 (for first index), and set
 	 * right to the length of array - 1 (the last index).
@@ -22,7 +22,7 @@ function sumZero(arr: Array<number>) {
 		 * to make the sum smaller.
 		 */
 
-		let sum = arr[left] + arr[right];
+		const sum = arr[left] + arr[right];
 		if (sum === 0) {
 			return [arr[left], arr[right]];
 		} else if (sum > 0) {
@@ -38,4 +38,4 @@ function sumZero(arr: Array<number>) {
 	return null;
 }
 
-console.log(sumZero([-4, -3, -2, -1, 0, 9, 5, 5, 10]));
+console.log(sumZero([-10, -4, -3, -2, -1, 0, 2, 3, 5, 5, 9]));

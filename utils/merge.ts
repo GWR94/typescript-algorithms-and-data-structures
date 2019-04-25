@@ -1,10 +1,10 @@
-function merge(arr1: Array<any>, arr2: Array<any>) {
+function merge(arr1: any[], arr2: any[]) {
 	/**
 	 * Create a const to store the sorted array in, along
 	 * with an i and j let to create counters for the checked
 	 * indices in each array.
 	 */
-	const results: Array<any> = [];
+	const results: any[] = [];
 	let i: number = 0;
 	let j: number = 0;
 	/**

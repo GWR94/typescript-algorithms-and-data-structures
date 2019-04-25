@@ -1,12 +1,14 @@
-function productOfArray(arr: Array<number>) {
-	let index: number = 0;
-	let sum: number = arr[0];
-	function helper(index: number, arr: number[]) {
-		if (index === arr.length) return sum;
-		sum *= arr[index];
-		return helper(index + 1, arr);
+function productOfArray(array: number[]) {
+	const index: number = 0;
+	let sum: number = array[0];
+	function helper(i: number, arr: number[]) {
+		if (i === arr.length) {
+			return sum;
+		}
+		sum *= arr[i];
+		return helper(i + 1, arr);
 	}
-	helper(index, arr);
+	helper(index, array);
 	return sum;
 }
 

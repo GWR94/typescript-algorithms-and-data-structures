@@ -1,5 +1,7 @@
 function power(base: number, exponent: number) {
-	if (exponent === 0) return 1;
+	if (exponent === 0) {
+		return 1;
+	}
 	return base * power(base, exponent - 1);
 }
 

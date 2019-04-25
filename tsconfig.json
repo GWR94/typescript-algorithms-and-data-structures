@@ -4,6 +4,7 @@
 			{
 				"name": "typescript-tslint-plugin"
 			}
-		]
+		],
+		"target": "es6"
 	}
 }
