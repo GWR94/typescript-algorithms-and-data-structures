@@ -1,4 +1,4 @@
-import swap from "../../utils/swap";
+import swap from "../utils/swap";
 
 function selectionSort(arr: number[]) {
 	for (let i = 0; i < arr.length; i++) {

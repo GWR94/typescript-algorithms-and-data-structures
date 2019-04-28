@@ -13,18 +13,29 @@ function merge(arr1: any[], arr2: any[]) {
 	 */
 	while (i < arr1.length && j < arr2.length) {
 		/**
-		 * If arr1's i index is smaller than arr2's j index
-		 * then we need push it to the results array and add
-		 * 1 to i. If arr2's j index is smaller than or equal
-		 * to arr1's i index, then we push it to the results
-		 * array and add 1 to j;
+		 * If arr1's i index is smaller than arr2's j index,
+		 * or arr1's i index is alphabetically ordered before
+		 * arr2's j index, then we need push it to the results
+		 * array and add 1 to i. If arr2's j index is smaller
+		 * than or equal to arr1's i index, then we push it to
+		 * the results array and add 1 to j;
 		 */
-		if (arr1[i] < arr2[j]) {
-			results.push(arr1[i]);
-			i++;
+		if (typeof arr1[0] === "number") {
+			if (arr1[i] < arr2[j]) {
+				results.push(arr1[i]);
+				i++;
+			} else {
+				results.push(arr2[j]);
+				j++;
+			}
 		} else {
-			results.push(arr2[j]);
-			j++;
+			if (arr1[i].localeCompare(arr2[j]) < 0) {
+				results.push(arr1[i]);
+				i++;
+			} else {
+				results.push(arr2[j]);
+				j++;
+			}
 		}
 	}
 	/**
@@ -32,7 +43,7 @@ function merge(arr1: any[], arr2: any[]) {
 	 * finishing the end of one array, and there are still
 	 * values in the other array, then we need to loop through
 	 * the other values and insert them into the results array.
-	 * The values will already be sorted numerically.
+	 * The values will already be sorted.
 	 */
 	while (i < arr1.length) {
 		results.push(arr1[i]);

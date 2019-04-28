@@ -37,7 +37,6 @@ function maxSubArray(arr: number[], num: number) {
 		temp = temp - arr[i - num] + arr[i];
 		max = Math.max(temp, max);
 	}
-	max;
 	return max;
 }
 

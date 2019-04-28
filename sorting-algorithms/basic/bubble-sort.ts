@@ -1,4 +1,4 @@
-import swap from "../../utils/swap";
+import swap from "../utils/swap";
 
 function bubbleSort(arr: any[]) {
 	let noSwaps: boolean;
