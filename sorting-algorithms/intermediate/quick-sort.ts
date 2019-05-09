@@ -7,6 +7,7 @@ function quickSort(
 ) {
 	if (left < right) {
 		const pivotIdx = pivot(arr, left, right);
+		console.log(pivotIdx);
 		quickSort(arr, left, pivotIdx - 1);
 		quickSort(arr, pivotIdx + 1, right);
 	}
