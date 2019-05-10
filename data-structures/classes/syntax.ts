@@ -1,11 +1,4 @@
 class Student {
-	public firstName: string;
-	public lastName: string;
-	public year: number;
-	public testResults: number[];
-	private timesLate: number;
-	private grade: string;
-
 	get lates() {
 		return this.timesLate;
 	}
@@ -14,18 +7,27 @@ class Student {
 		return this.grade;
 	}
 
-	constructor(
-		firstName: string,
-		lastName: string,
-		year: number,
-		timesLate: number = 0,
-		testResults: number[] = []
-	) {
+	public static enrollStudents(students: Student[]) {
+		students.forEach((student) => {
+			console.log(
+				"Enrolled student: ",
+				student.firstName,
+				student.lastName
+			);
+		});
+	}
+
+	public firstName: string;
+	public lastName: string;
+	public year: number;
+	public testResults: number[] = [];
+	private timesLate: number = 0;
+	private grade: string;
+
+	constructor(firstName: string, lastName: string, year: number) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.year = year;
-		this.timesLate = timesLate;
-		this.testResults = testResults;
 	}
 
 	public getInfo() {
@@ -43,7 +45,7 @@ class Student {
 		console.log(
 			`${this.firstName} ${this.lastName} has been late ${
 				this.timesLate
-			} times.`
+			} time${this.timesLate > 1 ? "s" : ""}.`
 		);
 		if (this.timesLate >= 3) {
 			console.log(
@@ -56,10 +58,9 @@ class Student {
 
 	public addTestResult(score: number) {
 		this.testResults.push(score);
-		let total = 0;
-		this.testResults.forEach((test) => {
-			total += test;
-		});
+		const total: number = this.testResults.reduce(
+			(a: number, b: number) => a + b
+		);
 		const average = total / this.testResults.length;
 		if (average > 80) {
 			this.grade = "A";
@@ -84,11 +85,13 @@ const james = new Student("James", "Gower", 10);
 const bill = new Student("Bill", "Bloggs", 8);
 
 james.getInfo();
-james.addToLates();
-james.addToLates();
-james.addToLates();
-james.getInfo();
-james.addTestResult(80);
-james.addTestResult(90);
-james.addTestResult(5);
+james.addToLates(); // timesLate = 1
+james.addToLates(); // timesLate = 2
+james.addToLates(); // timesLate = 3 - Report
+james.getInfo(); // Your full name is James Gower. You are in year 10. You have been late 3 times.
+james.addTestResult(80); // B
+james.addTestResult(90); // A
+james.addTestResult(5); // F
+// james.grade = "A" - throws error as it's private
 console.log(james.currentGrade);
+Student.enrollStudents([james, bill]);
