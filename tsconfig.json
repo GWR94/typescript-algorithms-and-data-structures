@@ -5,6 +5,9 @@
 				"name": "typescript-tslint-plugin"
 			}
 		],
-		"target": "es6"
+		"target": "es5",
+		"moduleResolution": "node",
+		"outDir": "out",
+		"sourceMap": true
 	}
 }

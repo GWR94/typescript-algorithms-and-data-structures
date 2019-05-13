@@ -1,11 +1,17 @@
 {
 	"defaultSeverity": "error",
-	"extends": ["tslint:recommended"],
+	"extends": ["tslint:recommended", "tslint-config-prettier"],
 	"jsRules": {},
 	"rules": {
 		"indent": [true, "tabs", 2],
 		"no-console": false,
-		"trailing-comma": false
+		"trailing-comma": false,
+		"max-classes-per-file": false,
+		"curly": false,
+		"object-literal-sort-keys": false
+	},
+	"linterOptions": {
+		"exclude": ["node_modules/**"]
 	},
 	"rulesDirectory": []
 }

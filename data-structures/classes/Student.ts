@@ -1,19 +1,27 @@
 class Student {
+	/**
+	 * Getter method for getting the timesLate value from the class
+	 * from an instance. i.e james.lates
+	 */
 	get lates() {
 		return this.timesLate;
 	}
 
+	/**
+	 * Getter method for getting the grade value from the class from
+	 * an instance. i.e james.currentGrade
+	 */
 	get currentGrade() {
 		return this.grade;
 	}
 
+	/**
+	 * Static (class) method to enroll multiple students, in an array of
+	 * Student instances.
+	 */
 	public static enrollStudents(students: Student[]) {
-		students.forEach((student) => {
-			console.log(
-				"Enrolled student: ",
-				student.firstName,
-				student.lastName
-			);
+		students.forEach(student => {
+			console.log("Enrolled student: ", student.firstName, student.lastName);
 		});
 	}
 
@@ -24,6 +32,12 @@ class Student {
 	private timesLate: number = 0;
 	private grade: string;
 
+	/**
+	 * Constructor for the Student class. Must include at least these parameters
+	 * @param firstName - First name of student
+	 * @param lastName  - Last name of student
+	 * @param year - Current year in school
+	 */
 	constructor(firstName: string, lastName: string, year: number) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -32,26 +46,24 @@ class Student {
 
 	public getInfo() {
 		console.log(
-			`Your full name is ${this.firstName} ${
-				this.lastName
-			}. You are in year ${this.year}. You have been late ${
-				this.timesLate
-			} times`
+			`Your full name is ${this.firstName} ${this.lastName}. You are in year ${
+				this.year
+			}. You have been late ${this.timesLate} times`
 		);
 	}
 
 	public addToLates() {
 		this.timesLate++;
 		console.log(
-			`${this.firstName} ${this.lastName} has been late ${
-				this.timesLate
-			} time${this.timesLate > 1 ? "s" : ""}.`
+			`${this.firstName} ${this.lastName} has been late ${this.timesLate} time${
+				this.timesLate > 1 ? "s" : ""
+			}.`
 		);
 		if (this.timesLate >= 3) {
 			console.log(
 				`${this.firstName} has been late too many times (${
 					this.timesLate
-				}). Report to the headteacher.`
+				}). Report this.`
 			);
 		}
 	}
@@ -71,6 +83,7 @@ class Student {
 		} else {
 			this.grade = "F";
 		}
+
 		console.log(
 			`After ${this.testResults.length} test${
 				this.testResults.length > 1 ? "s" : ""
