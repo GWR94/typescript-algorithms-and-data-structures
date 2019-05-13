@@ -15,10 +15,13 @@ class DoublyLinkedList {
 	public tail: Node;
 	public length: number;
 
-	constructor() {
+	constructor(data?: any[]) {
 		this.head = null;
 		this.tail = null;
 		this.length = 0;
+		if (data && Array.isArray(data)) {
+			data.forEach(item => this.push(item));
+		}
 	}
 
 	public push(val: any) {
@@ -87,9 +90,40 @@ class DoublyLinkedList {
 
 	public set(val: any, index: number) {
 		const current = this.get(index);
-		console.log(current);
 		if (current) {
 			current.val = val;
+			return true;
+		}
+		return false;
+	}
+
+	public insert(val: any, index: number) {
+		const current = this.get(index);
+		if (current) {
+			if (index === 0) return !!this.unshift(val);
+			if (index === this.length - 1) return !!this.push(val)
+			const node = new Node(val);
+			const prevNode = current.prev;
+			const nextNode = current.next;
+			prevNode.next = node;
+			node.next = current;
+			nextNode.prev = node;
+			node.prev = current.prev;
+			this.length++; 
+			return true;
+		}
+	}
+
+	public remove(index: number) {
+		const current = this.get(index);
+		if (current) {
+			if (index === 0) return !!this.shift();
+			if (index === this.length - 1) return !!this.pop();
+			const current = this.get(index);
+			const prevNode = current.prev;
+			prevNode.next = current.next;
+			current.prev = prevNode.prev;
+			this.length--;
 			return true;
 		}
 		return false;
@@ -110,17 +144,9 @@ class DoublyLinkedList {
 	}
 }
 
-const list = new DoublyLinkedList();
-list.push(0);
-list.push(1);
-list.push(2);
-list.push(3);
-list.push(4);
-list.push(5);
-list.push(6);
-list.push(7);
-list.push(8);
-list.push(9);
-list.set("Four", 4);
-list.set("Eight", 8);
+const list = new DoublyLinkedList([100, 200, 300, 400, 500]);
+list.push(600);
+list.set("ONE HUNDRED", 0);
+list.insert(250, 2);
+list.remove(2);
 list.print();

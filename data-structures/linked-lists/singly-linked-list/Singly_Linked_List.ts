@@ -5,10 +5,13 @@ class SinglyLinkedList {
 	public tail: Node;
 	public length: number;
 
-	constructor() {
+	constructor(data?: any[]) {
 		this.head = null;
 		this.tail = null;
 		this.length = 0;
+		if (data && Array.isArray(data)) {
+			data.forEach(item => this.push(item));
+		}
 	}
 
 	/**
