@@ -1,6 +1,7 @@
 import swap from "../utils/swap";
 
-function bubbleSort(arr: any[]) {
+export default function bubbleSort(arr: any[]) {
+	if (!Array.isArray(arr)) return false;
 	let noSwaps: boolean;
 	for (let i = arr.length; i > 0; i--) {
 		noSwaps = true;
@@ -16,4 +17,4 @@ function bubbleSort(arr: any[]) {
 	return arr;
 }
 
-console.log(bubbleSort([4, 2, 5, 1, 3]));
+console.log(bubbleSort(["c", "d", "b", "a"]));

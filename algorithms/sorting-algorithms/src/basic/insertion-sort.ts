@@ -1,4 +1,4 @@
-function insertionSort(arr: any[]) {
+export default function insertionSort(arr: any[]) {
 	/**
 	 * We set i to be 1 because we are using 0 to be the
 	 * baseline for the sorted array.
@@ -38,7 +38,8 @@ function insertionSort(arr: any[]) {
 		 */
 		arr[j + 1] = current;
 	}
-	return console.log(arr);
+	console.log(arr);
+	return arr;
 }
 
 insertionSort([6, 3, 2, 1, 111, 25, 45]);

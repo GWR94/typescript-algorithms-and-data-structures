@@ -12,7 +12,7 @@
 	"scripts": {
 		"prestart": "npm run build",
 		"build": "tsc",
-		"test": "npx jest --watch"
+		"test": "npx jest --watch --verbose --silent"
 	},
 	"repository": {
 		"type": "git",

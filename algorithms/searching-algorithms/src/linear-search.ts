@@ -1,4 +1,4 @@
-import states from "./data/states";
+import states from "../data/states";
 
 /**
  * A linear search is where you have a data structure, and iterate through
@@ -7,15 +7,18 @@ import states from "./data/states";
  * all use linear searching.
  */
 
-function linearSearch(arr: any[], val: any) {
+export default function linearSearch(arr: any[], val: any) {
+	if (!Array.isArray(arr) || val === undefined || val === null) return -1;
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] === val) {
-			return console.log(
+			console.log(
 				`${val} found at index ${i} and took ${i + 1} iterations`
 			);
+			return i;
 		}
 	}
-	return console.log(`${val} not found in array`);
+	console.log(`${val} not found in array`);
+	return -1;
 }
 
 linearSearch(states, "Indiana");

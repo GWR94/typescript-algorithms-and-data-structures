@@ -8,7 +8,7 @@ function stringSearch(str: string, substr: string) {
 			}
 		}
 	}
-	matches;
+	console.log(matches);
 	return matches;
 }
 

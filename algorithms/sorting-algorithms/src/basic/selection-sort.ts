@@ -1,6 +1,6 @@
 import swap from "../utils/swap";
 
-function selectionSort(arr: number[]) {
+export default function selectionSort(arr: any[]) {
 	for (let i = 0; i < arr.length; i++) {
 		let smallest = i;
 		for (let j = i + 1; j < arr.length; j++) {
@@ -15,4 +15,4 @@ function selectionSort(arr: number[]) {
 	return arr;
 }
 
-console.log(selectionSort([4, 4, 2, 22, 11, 324]));
+console.log(selectionSort(["e", "g", "c", "d", "b", "a", "f"]));
