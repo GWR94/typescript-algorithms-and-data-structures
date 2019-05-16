@@ -1,4 +1,4 @@
-import swap from "../utils/swap";
+import swap from "../../utils/swap";
 
 export default function bubbleSort(arr: any[]) {
 	if (!Array.isArray(arr)) return false;

@@ -37,7 +37,7 @@ describe("Binary search tests", () => {
 			expect(binarySearch(undefined, 1)).toBe(-1);
 		});
 		it("should return -1 with undefined as both inputs", () => {
-			expect(binarySearch(undefined, undefined));
+			expect(binarySearch(undefined, undefined)).toBe(-1);
 		});
 	});
 });

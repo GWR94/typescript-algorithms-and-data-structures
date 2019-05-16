@@ -1,4 +1,19 @@
-import { getDigit, mostDigits } from "../utils/radix-sort-helpers";
+import { getDigit, mostDigits } from "../../utils/radix-sort-helpers";
+
+export default function radixSortHelper(arr: number[]) {
+	const positive: number[] = [];
+	const negative: number[] = [];
+	for (const num of arr) {
+		if (num < 0) {
+			negative.push(num);
+		} else {
+			positive.push(num);
+		}
+	}
+	return radixSort(negative)
+		.reverse()
+		.concat(radixSort(positive));
+}
 
 function radixSort(arr: number[]) {
 	/**
@@ -44,4 +59,4 @@ function radixSort(arr: number[]) {
 	return arr;
 }
 
-radixSort([123, 22, 44, 555, 2112, 4112, 222, 125, 1, 23]);
+radixSort([-20, 74, 22, 11, 1]);
