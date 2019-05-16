@@ -1,11 +1,14 @@
 import bubbleSort from "../src/basic/bubble-sort";
 import insertionSort from "../src/basic/insertion-sort";
 import selectionSort from "../src/basic/selection-sort";
+import mergeSort from "../src/intermediate/merge-sort";
+import quickSort from "../src/intermediate/quick-sort";
+import radixSort from "../src/intermediate/radix-sort";
 
-describe("Basic sorting test suite", () => {
+describe("Sorting test suite", () => {
 	describe("Unsorted numeric array test cases", () => {
-		const input = [-20, 74, 22, 11, 1];
-		const expected = [-20, 1, 11, 22, 74];
+		const input = [-20, 74, 22, -500, 11, 1, -1000];
+		const expected = [-1000, -500, -20, 1, 11, 22, 74];
 		it("should return a numerically sorted array from bubbleSort", () => {
 			expect(bubbleSort(input)).toEqual(expected);
 		});
@@ -14,6 +17,15 @@ describe("Basic sorting test suite", () => {
 		});
 		it("should return a numerically sorted array from selectionSort", () => {
 			expect(selectionSort(input)).toEqual(expected);
+		});
+		it("should return a numerically sorted array from mergeSort", () => {
+			expect(mergeSort(input)).toEqual(expected);
+		});
+		it("should return a numerically sorted array from quickSort", () => {
+			expect(quickSort(input)).toEqual(expected);
+		});
+		it("should return a numerically sorted array from radixSort", () => {
+			expect(radixSort(input)).toEqual(expected);
 		});
 	});
 
@@ -26,8 +38,14 @@ describe("Basic sorting test suite", () => {
 		it("should return an alphabetically sorted array from bubbleSort", () => {
 			expect(insertionSort(input)).toEqual(expected);
 		});
-		it("should return an alphabetically sorted array from bubbleSort", () => {
+		it("should return an alphabetically sorted array from selectionSort", () => {
 			expect(selectionSort(input)).toEqual(expected);
+		});
+		it("should return an alphabetically sorted array from mergeSort", () => {
+			expect(mergeSort(input)).toEqual(expected);
+		});
+		it("should return an alphabetically sorted array from quickSort", () => {
+			expect(quickSort(input)).toEqual(expected);
 		});
 	});
 });

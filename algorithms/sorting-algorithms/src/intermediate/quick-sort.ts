@@ -1,7 +1,7 @@
-import pivot from "../utils/pivot";
+import pivot from "../../utils/pivot";
 
-function quickSort(
-	arr: number[],
+export default function quickSort(
+	arr: any[],
 	left: number = 0,
 	right: number = arr.length - 1
 ) {
