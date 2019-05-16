@@ -1,6 +1,8 @@
-function flatten(arr: any[]) {}
+function flatten(array: any[]) {
+	return array.reduce((arr, el) => {
+		const items = Array.isArray(el) ? flatten(el) : [el];
+		return arr.concat(items);
+	}, []);
+}
 
 flatten([1, 2, 3, [4, 5]]); // [1, 2, 3, 4, 5]
-// flatten([1, [2, [3, 4], [[5]]]]) // [1, 2, 3, 4, 5]
-// flatten([[1],[2],[3]]) // [1,2,3]
-// flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3

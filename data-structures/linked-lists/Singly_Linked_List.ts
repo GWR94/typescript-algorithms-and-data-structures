@@ -1,4 +1,4 @@
-import Node from "./Node";
+import Node from "../nodes/Node";
 
 class SinglyLinkedList {
 	public head: Node;

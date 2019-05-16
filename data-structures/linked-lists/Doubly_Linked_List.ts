@@ -1,14 +1,4 @@
-class Node {
-	public val: any;
-	public next: Node;
-	public prev: Node;
-
-	constructor(val: any) {
-		this.val = val;
-		this.next = null;
-		this.prev = null;
-	}
-}
+import Node from "../nodes/Double_Node";
 
 export default class DoublyLinkedList {
 	public head: Node;

@@ -3,7 +3,7 @@ export default class Node {
 	public next: Node;
 	public prev: Node;
 
-	constructor(val: any, next: Node, prev: Node) {
+	constructor(val: any) {
 		this.val = val;
 		this.next = null;
 		this.prev = null;

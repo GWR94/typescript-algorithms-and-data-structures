@@ -6,6 +6,7 @@
 			}
 		],
 		"target": "es5",
+		"lib": ["esnext"],
 		"moduleResolution": "node",
 		"outDir": "out",
 		"sourceMap": true

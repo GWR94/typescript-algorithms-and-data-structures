@@ -1,4 +1,4 @@
-import Node from "./Node";
+import Node from "../nodes/Node";
 
 class Stack {
 	public first: Node;
@@ -32,7 +32,7 @@ class Stack {
 		}
 		this.first = currentFirst.next;
 		this.size--;
-		return currentFirst.value;
+		return currentFirst.val;
 	}
 
 	public print() {
@@ -40,8 +40,8 @@ class Stack {
 		let current = this.first;
 		while (current) {
 			arr.push({
-				value: current.value,
-				next: current.next ? current.next.value : null
+				value: current.val,
+				next: current.next ? current.next.val : null
 			});
 			current = current.next;
 		}
