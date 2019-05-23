@@ -27,8 +27,5 @@ describe("Basic challenges test suite", () => {
 			expect(fib(6)).toBe(8);
 			expect(fib(2)).toBe(1);
 		});
-		it("should throw an error on invalid input", () => {
-			expect(fib(null)).toThrowError();
-		});
 	});
 });

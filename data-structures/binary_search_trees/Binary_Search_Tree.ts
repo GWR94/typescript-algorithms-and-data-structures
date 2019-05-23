@@ -127,13 +127,12 @@ export default class BinarySearchTree {
 		 * find, so we should return null.
 		 */
 		if (!this.root) return null;
-		else {
-			/**
-			 * If there is a root value, then there are values which we need to loop
-			 * through and check. We should also create a variable to store the current
-			 * node in, so we can change it while traversing through the binary search
-			 * tree.
-			 */
+		/**
+		 * If there is a root value, then there are values which we need to loop
+		 * through and check. We should also create a variable to store the current
+		 * node in, so we can change it while traversing through the binary search
+		 * tree.
+		 */ else {
 			let current: Node = this.root;
 			while (true) {
 				/**
@@ -141,14 +140,16 @@ export default class BinarySearchTree {
 				 * method, then the current node should be returned.
 				 */
 				if (current.value === value) return current;
-				/**
-				 * If the value of the current node is smaller than the value input into
-				 * the method, then we need to check if it has a current.right. If it does,
-				 * then we need to change current to be current.right so we can continue
-				 * traversing through the tree; if it doesn't, then the node is not in the
-				 * binary search tree, so we need to return null
-				 */ else if (current.value < value) {
-					if (!current.right) return null;
+				if (!current.right) {
+					return null;
+				} else if (current.value < value) {
+					/**
+					 * If the value of the current node is smaller than the value input into
+					 * the method, then we need to check if it has a current.right. If it does,
+					 * then we need to change current to be current.right so we can continue
+					 * traversing through the tree; if it doesn't, then the node is not in the
+					 * binary search tree, so we need to return null
+					 */
 					current = current.right;
 				} else {
 					/**
@@ -190,11 +191,11 @@ export default class BinarySearchTree {
 	}
 
 	/**
-	 * Method to traverse through the binary search tree, looking
-	 * at all of the nodes in it at least once, and returning those
-	 * values.
+	 * Breadth-First Searching is a method to traverse through the
+	 * binary search tree, looking at all of the nodes in it at
+	 * least once, and returning those nodes' values in one array.
 	 */
-	public BFS() {
+	public breadthFirstSearching(): string[] {
 		/**
 		 * To store the visited nodes, you need to create two queues,
 		 * One called queue, which stores the elements which are waiting
@@ -204,7 +205,7 @@ export default class BinarySearchTree {
 		 * shift methods.
 		 */
 		const queue: Node[] = [];
-		const visited: Node[] = [];
+		const visited: string[] = [];
 		let node: Node = this.root;
 		/**
 		 * Push the root element to the queue to so it can be used as the
@@ -218,12 +219,12 @@ export default class BinarySearchTree {
 		while (queue.length) {
 			/**
 			 * Take the result from shifting queue (the first element in
-			 * the array) and store it in the node let, then push node to
-			 * the visited array. queue.shift() also removes the first node
+			 * the array) and store it in the node let, then push nodes value
+			 * to the visited array. queue.shift() also removes the first node
 			 * from the queue array.
 			 */
 			node = queue.shift();
-			visited.push(node);
+			visited.push(node.value);
 			/**
 			 * If there is a node to the left of the current node, add it to
 			 * the end of the queue.
@@ -238,21 +239,56 @@ export default class BinarySearchTree {
 		console.log(visited);
 		return visited;
 	}
+
+	public depthFirstSearching_preOrder(): string[] {
+		const visited: string[] = [];
+		const traverse = (node: Node): void => {
+			visited.push(node.value);
+			node.left && traverse(node.left);
+			node.right && traverse(node.right);
+		};
+		traverse(this.root);
+		console.log(visited);
+		return visited;
+	}
+
+	public depthFirstSearching_postOrder(): string[] {
+		const visited: string[] = [];
+		const traverse = (node: Node): void => {
+			node.left && traverse(node.left);
+			node.right && traverse(node.right);
+			visited.push(node.value);
+		};
+		traverse(this.root);
+		console.log(visited);
+		return visited;
+	}
+
+	public depthFirstSearching_inOrder(): string[] {
+		const visited: string[] = [];
+		const traverse = (node: Node): void => {
+			if (node.left) {
+				traverse(node.left);
+			}
+			visited.push(node.value);
+			if (node.right) {
+				traverse(node.right);
+			}
+		};
+		traverse(this.root);
+		console.log(visited);
+		return visited;
+	}
 }
 
-const tree = new BinarySearchTree([
-	10,
-	15,
-	5,
-	7,
-	11,
-	59,
-	60,
-	5,
-	100,
-	2,
-	10,
-	100
-]);
+const tree = new BinarySearchTree([10, 6, 8, 3, 20, 15]);
+/**
+ *           10
+ *        6      15
+ *     3     8      20
+ */
 
-tree.BFS();
+tree.breadthFirstSearching();
+tree.depthFirstSearching_preOrder();
+tree.depthFirstSearching_postOrder();
+tree.depthFirstSearching_inOrder();
