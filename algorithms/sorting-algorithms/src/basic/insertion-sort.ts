@@ -1,4 +1,4 @@
-export default function insertionSort(arr: any[]) {
+export default function insertionSort(arr: any[]): any[] {
 	/**
 	 * We set i to be 1 because we are using 0 to be the
 	 * baseline for the sorted array.

@@ -1,4 +1,4 @@
-function factorial(num: number) {
+function factorial(num: number): number {
 	/**
 	 * Recursive function to get the factorial of num,
 	 * which is the product of all the previous numbers

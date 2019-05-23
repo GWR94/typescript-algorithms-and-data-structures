@@ -4,10 +4,9 @@
  * iteration.
  * @param num number to count down from.
  */
-function countDown(num: number, decrement: number = 1) {
+function countDown(num: number, decrement: number = 1): void {
 	if (num <= 0) {
-		console.log("All done!");
-		return;
+		return console.log("All done!");
 	}
 	console.log(num);
 	num -= decrement;

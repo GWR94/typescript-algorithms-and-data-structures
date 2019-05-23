@@ -1,5 +1,5 @@
 export class Kata {
-	public static descendingOrder(n: number) {
+	public static descendingOrder(n: number): number {
 		return parseInt(
 			n
 				.toString()

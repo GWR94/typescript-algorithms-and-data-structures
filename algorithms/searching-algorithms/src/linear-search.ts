@@ -7,7 +7,7 @@ import states from "../data/states";
  * all use linear searching.
  */
 
-export default function linearSearch(arr: any[], val: any) {
+export default function linearSearch(arr: any[], val: any): number {
 	if (!Array.isArray(arr) || val === undefined || val === null) return -1;
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i] === val) {

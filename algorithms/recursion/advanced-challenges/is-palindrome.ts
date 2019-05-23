@@ -1,4 +1,4 @@
-function isPalindrome(str: string) {
+function isPalindrome(str: string): boolean {
 	if (str[0] !== str[str.length - 1]) {
 		console.log("Not a palindrome");
 		return false;

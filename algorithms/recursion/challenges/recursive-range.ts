@@ -1,4 +1,4 @@
-function recursiveRange(num: number) {
+function recursiveRange(num: number): number {
 	if (num === 0) {
 		return num;
 	}

@@ -1,4 +1,4 @@
-function stringSearch(str: string, substr: string) {
+function stringSearch(str: string, substr: string): number {
 	let matches: number = 0;
 	for (let i = 0; i < str.length; i++) {
 		if (str[i] === substr[0]) {

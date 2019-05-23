@@ -1,4 +1,4 @@
-export default function fib(num: number) {
+export default function fib(num: number): number {
 	if (num < 0) return null;
 	else if (num <= 2 && num > 0) return 1;
 	return fib(num - 2) + fib(num - 1);

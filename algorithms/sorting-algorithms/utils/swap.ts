@@ -2,7 +2,7 @@
  * ES6 way of swapping the indices of idx1 and idx2, then
  * returning it.
  */
-const swap = (arr: any[], idx1: number, idx2: number) => {
+const swap = (arr: any[], idx1: number, idx2: number): void => {
 	[arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
 };
 
@@ -10,7 +10,7 @@ const swap = (arr: any[], idx1: number, idx2: number) => {
  * ES5 way of swapping the indices of idx1 and idx2, then
  * returning it
  */
-function es5Swap(arr: any[], idx1: number, idx2: number) {
+function es5Swap(arr: any[], idx1: number, idx2: number): any[] {
 	const temp = arr[idx1];
 	arr[idx1] = arr[idx2];
 	arr[idx2] = temp;

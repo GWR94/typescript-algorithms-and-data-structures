@@ -1,4 +1,4 @@
-function merge(arr1: any[], arr2: any[]) {
+function merge(arr1: any[], arr2: any[]): any[] {
 	/**
 	 * Create a const to store the sorted array in, along
 	 * with an i and j let to create counters for the checked
@@ -20,22 +20,12 @@ function merge(arr1: any[], arr2: any[]) {
 		 * than or equal to arr1's i index, then we push it to
 		 * the results array and add 1 to j;
 		 */
-		if (typeof arr1[0] === "number") {
-			if (arr1[i] < arr2[j]) {
-				results.push(arr1[i]);
-				i++;
-			} else {
-				results.push(arr2[j]);
-				j++;
-			}
+		if (arr1[i] < arr2[j]) {
+			results.push(arr1[i]);
+			i++;
 		} else {
-			if (arr1[i].localeCompare(arr2[j]) < 0) {
-				results.push(arr1[i]);
-				i++;
-			} else {
-				results.push(arr2[j]);
-				j++;
-			}
+			results.push(arr2[j]);
+			j++;
 		}
 	}
 	/**

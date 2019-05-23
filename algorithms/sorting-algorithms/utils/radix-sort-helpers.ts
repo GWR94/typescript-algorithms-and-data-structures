@@ -1,4 +1,4 @@
-function getDigit(num: number, i: number) {
+function getDigit(num: number, i: number): number {
 	/**
 	 * Returns the digit at the index of i, when i starts from
 	 * the last digit on the number
@@ -6,7 +6,7 @@ function getDigit(num: number, i: number) {
 	return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
 }
 
-function digitCount(num: number) {
+function digitCount(num: number): number {
 	/**
 	 * Returns the amount of numbers in any given number
 	 */
@@ -14,7 +14,7 @@ function digitCount(num: number) {
 	return Math.floor(Math.log10(Math.abs(num))) + 1;
 }
 
-function mostDigits(arr: number[]) {
+function mostDigits(arr: number[]): number {
 	/**
 	 * Returns the amount of the largest length of the number in
 	 * an array.

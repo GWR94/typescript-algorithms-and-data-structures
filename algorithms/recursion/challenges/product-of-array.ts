@@ -1,4 +1,4 @@
-function productOfArray(array: number[]) {
+function productOfArray(array: number[]): number {
 	const index: number = 0;
 	let sum: number = array[0];
 	function helper(i: number, arr: number[]) {

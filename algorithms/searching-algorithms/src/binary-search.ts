@@ -1,6 +1,6 @@
 import states from "../data/states";
 
-export default function binarySearch(arr: any[], val: any) {
+export default function binarySearch(arr: any[], val: any): number {
 	if (!Array.isArray(arr) || !val || !arr) return -1;
 	let left: number = 0;
 	let right: number = arr.length - 1;

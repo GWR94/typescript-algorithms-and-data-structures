@@ -1,4 +1,4 @@
-function capitalizeFirst(arr: string[]) {
+function capitalizeFirst(arr: string[]): string[] {
 	const newArr = [];
 	capitaliseHelper(arr);
 	function capitaliseHelper(array: string[]) {

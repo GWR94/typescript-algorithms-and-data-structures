@@ -1,6 +1,6 @@
 import swap from "../../utils/swap";
 
-export default function selectionSort(arr: any[]) {
+export default function selectionSort(arr: any[]): any[] {
 	for (let i = 0; i < arr.length; i++) {
 		let smallest = i;
 		for (let j = i + 1; j < arr.length; j++) {

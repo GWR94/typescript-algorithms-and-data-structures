@@ -1,4 +1,4 @@
-function flatten(array: any[]) {
+function flatten(array: any[]): any[] {
 	return array.reduce((arr, el) => {
 		const items = Array.isArray(el) ? flatten(el) : [el];
 		return arr.concat(items);

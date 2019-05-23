@@ -1,6 +1,6 @@
 import merge from "../../utils/merge";
 
-export default function mergeSort(arr: any[]) {
+export default function mergeSort(arr: any[]): any[] {
 	/**
 	 * Return the array if it is equal to or less than 1, because the
 	 * array is obviously sorted at these lengths.

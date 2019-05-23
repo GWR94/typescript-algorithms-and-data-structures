@@ -4,7 +4,7 @@ export default function quickSort(
 	arr: any[],
 	left: number = 0,
 	right: number = arr.length - 1
-) {
+): any[] {
 	if (left < right) {
 		const pivotIdx = pivot(arr, left, right);
 		console.log(pivotIdx);

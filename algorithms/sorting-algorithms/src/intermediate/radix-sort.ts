@@ -1,6 +1,6 @@
 import { getDigit, mostDigits } from "../../utils/radix-sort-helpers";
 
-export default function radixSortHelper(arr: number[]) {
+export default function radixSortHelper(arr: number[]): number[] {
 	const positive: number[] = [];
 	const negative: number[] = [];
 	for (const num of arr) {
@@ -15,7 +15,7 @@ export default function radixSortHelper(arr: number[]) {
 		.concat(radixSort(positive));
 }
 
-function radixSort(arr: number[]) {
+function radixSort(arr: number[]): number[] {
 	/**
 	 * Find the number with the largest amount of digits and return
 	 * the count, so we know what to loop up until for each number.
