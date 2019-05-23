@@ -3,7 +3,7 @@ class Student {
 	 * Getter method for getting the timesLate value from the class
 	 * from an instance. i.e james.lates
 	 */
-	get lates() {
+	get lates(): number {
 		return this.timesLate;
 	}
 
@@ -11,7 +11,7 @@ class Student {
 	 * Getter method for getting the grade value from the class from
 	 * an instance. i.e james.currentGrade
 	 */
-	get currentGrade() {
+	get currentGrade(): string {
 		return this.grade;
 	}
 
@@ -19,7 +19,7 @@ class Student {
 	 * Static (class) method to enroll multiple students, in an array of
 	 * Student instances.
 	 */
-	public static enrollStudents(students: Student[]) {
+	public static enrollStudents(students: Student[]): void {
 		students.forEach(student => {
 			console.log("Enrolled student: ", student.firstName, student.lastName);
 		});
@@ -44,7 +44,7 @@ class Student {
 		this.year = year;
 	}
 
-	public getInfo() {
+	public getInfo(): void {
 		console.log(
 			`Your full name is ${this.firstName} ${this.lastName}. You are in year ${
 				this.year
@@ -52,7 +52,7 @@ class Student {
 		);
 	}
 
-	public addToLates() {
+	public addToLates(): void {
 		this.timesLate++;
 		console.log(
 			`${this.firstName} ${this.lastName} has been late ${this.timesLate} time${
@@ -68,7 +68,7 @@ class Student {
 		}
 	}
 
-	public addTestResult(score: number) {
+	public addTestResult(score: number): void {
 		this.testResults.push(score);
 		const total: number = this.testResults.reduce(
 			(a: number, b: number) => a + b

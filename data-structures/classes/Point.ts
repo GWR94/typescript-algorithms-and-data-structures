@@ -7,7 +7,7 @@ class Point {
 	 * @param b: Point instance which contains the x and y values to
 	 * find distance to b
 	 */
-	public static distance(a: Point, b: Point) {
+	public static distance(a: Point, b: Point): number {
 		const dx: number = a.x - b.x;
 		const dy: number = a.y - b.y;
 		console.log(Math.hypot(dx, dy));

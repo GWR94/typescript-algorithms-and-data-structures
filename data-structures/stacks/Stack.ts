@@ -1,12 +1,6 @@
-import Node from "../nodes/Node";
+import Node from "../linked_lists/singly-linked-list/Node";
 
-/**
- * TODO
- * [ ] Fix push and/or pop
- * [ ] Rename push/pop
- */
-
-class Queue {
+class Stack {
 	public first: Node;
 	public last: Node;
 	public size: number;
@@ -14,31 +8,31 @@ class Queue {
 	constructor() {
 		this.first = null;
 		this.last = null;
-		this.size = null;
+		this.size = 0;
 	}
 
-	public push(val: any) {
-		const node = new Node(val);
+	public push(value: any) {
+		const node = new Node(value);
 		if (!this.first) {
 			this.first = node;
 			this.last = node;
 		} else {
-			this.first.next = node;
+			node.next = this.first;
+			this.first = node;
 		}
 		this.size++;
 		return this;
 	}
 
 	public pop() {
-		if (!this.first) return undefined;
+		if (!this.first) return null;
 		const currentFirst = this.first;
 		if (this.first === this.last) {
 			this.last = null;
 		}
 		this.first = currentFirst.next;
 		this.size--;
-		console.log(currentFirst.val);
-		return currentFirst;
+		return currentFirst.val;
 	}
 
 	public print() {
@@ -55,8 +49,12 @@ class Queue {
 	}
 }
 
-const queue = new Queue();
-queue.push(1);
-queue.push(2);
-queue.push(3);
-queue.print();
+const stack = new Stack();
+stack.push("Google");
+stack.push("Facebook");
+stack.push("YouTube");
+stack.print();
+stack.pop();
+stack.print();
+stack.pop();
+stack.print();

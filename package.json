@@ -12,7 +12,8 @@
 	"scripts": {
 		"prestart": "npm run build",
 		"build": "tsc",
-		"test": "npx jest --watch --verbose --silent"
+		"test": "npx jest --watch --verbose --silent",
+		"t": "npx jest --watch --silent"
 	},
 	"repository": {
 		"type": "git",

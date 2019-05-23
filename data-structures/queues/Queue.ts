@@ -1,6 +1,6 @@
-import Node from "../nodes/Node";
+import Node from "../linked_lists/singly-linked-list/Node";
 
-class Stack {
+class Queue {
 	public first: Node;
 	public last: Node;
 	public size: number;
@@ -8,23 +8,22 @@ class Stack {
 	constructor() {
 		this.first = null;
 		this.last = null;
-		this.size = 0;
+		this.size = null;
 	}
 
-	public push(value: any) {
-		const node = new Node(value);
+	public enqueue(val: any) {
+		const node = new Node(val);
 		if (!this.first) {
 			this.first = node;
 			this.last = node;
 		} else {
-			node.next = this.first;
-			this.first = node;
+			this.last.next = node;
+			this.last = node;
 		}
-		this.size++;
-		return this;
+		return ++this.size;
 	}
 
-	public pop() {
+	public dequeue() {
 		if (!this.first) return null;
 		const currentFirst = this.first;
 		if (this.first === this.last) {
@@ -32,6 +31,7 @@ class Stack {
 		}
 		this.first = currentFirst.next;
 		this.size--;
+		console.log(currentFirst.val);
 		return currentFirst.val;
 	}
 
@@ -49,12 +49,12 @@ class Stack {
 	}
 }
 
-const stack = new Stack();
-stack.push("Google");
-stack.push("Facebook");
-stack.push("YouTube");
-stack.print();
-stack.pop();
-stack.print();
-stack.pop();
-stack.print();
+const queue = new Queue();
+queue.enqueue(1);
+queue.enqueue(2);
+queue.enqueue(3);
+queue.print();
+queue.dequeue();
+queue.dequeue();
+queue.dequeue();
+queue.dequeue();

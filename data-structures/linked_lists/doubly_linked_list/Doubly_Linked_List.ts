@@ -1,4 +1,4 @@
-import Node from "../nodes/Double_Node";
+import Node from "./Node";
 
 export default class DoublyLinkedList {
 	public head: Node;
@@ -9,12 +9,10 @@ export default class DoublyLinkedList {
 		this.head = null;
 		this.tail = null;
 		this.length = 0;
-		if (data && Array.isArray(data)) {
-			data.forEach(item => this.push(item));
-		}
+		if (data) data.forEach(item => this.push(item));
 	}
 
-	public push(val: any) {
+	public push(val: any): DoublyLinkedList {
 		const node = new Node(val);
 		if (this.head === null) {
 			this.head = node;
@@ -28,7 +26,7 @@ export default class DoublyLinkedList {
 		return this;
 	}
 
-	public pop() {
+	public pop(): Node {
 		if (!this.head) return undefined;
 		const popped: Node = this.tail;
 		this.tail = this.tail.prev;
@@ -37,7 +35,7 @@ export default class DoublyLinkedList {
 		return popped;
 	}
 
-	public shift() {
+	public shift(): Node {
 		if (!this.head) return undefined;
 		const shifted = this.head;
 		this.head = shifted.next;
@@ -46,7 +44,7 @@ export default class DoublyLinkedList {
 		return shifted;
 	}
 
-	public unshift(val: any) {
+	public unshift(val: any): DoublyLinkedList {
 		const node = new Node(val);
 		if (!this.head) {
 			this.head = node;
@@ -60,7 +58,7 @@ export default class DoublyLinkedList {
 		return this;
 	}
 
-	public get(index: number) {
+	public get(index: number): Node {
 		if (this.length <= index || index < 0) return undefined;
 		let count: number;
 		let current: Node;
@@ -82,7 +80,7 @@ export default class DoublyLinkedList {
 		return current;
 	}
 
-	public set(val: any, index: number) {
+	public set(val: any, index: number): boolean {
 		const current = this.get(index);
 		if (current !== null) {
 			current.val = val;
@@ -91,7 +89,7 @@ export default class DoublyLinkedList {
 		return false;
 	}
 
-	public insert(val: any, index: number) {
+	public insert(val: any, index: number): boolean {
 		if (this.length <= index || index < 0) return false;
 		if (index === 0) return !!this.unshift(val);
 		if (index === this.length) return !!this.push(val);
@@ -106,7 +104,7 @@ export default class DoublyLinkedList {
 		return true;
 	}
 
-	public remove(index: number) {
+	public remove(index: number): boolean {
 		const current = this.get(index);
 		if (current) {
 			if (index === 0) return !!this.shift();
@@ -121,7 +119,7 @@ export default class DoublyLinkedList {
 		return false;
 	}
 
-	public print() {
+	public print(): void {
 		const arr = [];
 		let current = this.head;
 		while (current) {
