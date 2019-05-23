@@ -1,9 +1,6 @@
 import bubbleSort from "../src/basic/bubble-sort";
 import insertionSort from "../src/basic/insertion-sort";
 import selectionSort from "../src/basic/selection-sort";
-import mergeSort from "../src/intermediate/merge-sort";
-import quickSort from "../src/intermediate/quick-sort";
-import radixSort from "../src/intermediate/radix-sort";
 
 describe("Sorting test suite", () => {
 	describe("Unsorted numeric array test cases", () => {
@@ -18,15 +15,6 @@ describe("Sorting test suite", () => {
 		it("should return a numerically sorted array from selectionSort", () => {
 			expect(selectionSort(input)).toEqual(expected);
 		});
-		it("should return a numerically sorted array from mergeSort", () => {
-			expect(mergeSort(input)).toEqual(expected);
-		});
-		it("should return a numerically sorted array from quickSort", () => {
-			expect(quickSort(input)).toEqual(expected);
-		});
-		it("should return a numerically sorted array from radixSort", () => {
-			expect(radixSort(input)).toEqual(expected);
-		});
 	});
 
 	describe("Unsorted alphabetical array test cases", () => {
@@ -40,12 +28,6 @@ describe("Sorting test suite", () => {
 		});
 		it("should return an alphabetically sorted array from selectionSort", () => {
 			expect(selectionSort(input)).toEqual(expected);
-		});
-		it("should return an alphabetically sorted array from mergeSort", () => {
-			expect(mergeSort(input)).toEqual(expected);
-		});
-		it("should return an alphabetically sorted array from quickSort", () => {
-			expect(quickSort(input)).toEqual(expected);
 		});
 	});
 });

@@ -1,7 +1,6 @@
 import swap from "../../utils/swap";
 
 export default function bubbleSort(arr: any[]) {
-	if (!Array.isArray(arr)) return false;
 	let noSwaps: boolean;
 	for (let i = arr.length; i > 0; i--) {
 		noSwaps = true;

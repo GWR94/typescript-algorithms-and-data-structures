@@ -19,7 +19,7 @@ export default function insertionSort(arr: any[]) {
 		 * value is higher than current so we can place "current"
 		 * in its correct index.
 		 */
-		let j;
+		let j: number;
 		for (j = i - 1; j >= 0 && current < arr[j]; j--) {
 			/**
 			 * If current is a smaller value than the value which
