@@ -1,18 +1,4 @@
-// import Node from "./Node";
-
-class Node {
-	public value: any;
-	public left: Node;
-	public right: Node;
-	public count: number;
-
-	constructor(value: any) {
-		this.value = value;
-		this.left = null;
-		this.right = null;
-		this.count = 0;
-	}
-}
+import Node from "./Node";
 
 export default class BinarySearchTree {
 	public root: Node;
@@ -191,11 +177,11 @@ export default class BinarySearchTree {
 	}
 
 	/**
-	 * Breadth-First Searching is a method to traverse through the
+	 * A breadth-first Searching method to traverse through the
 	 * binary search tree, looking at all of the nodes in it at
 	 * least once, and returning those nodes' values in one array.
 	 */
-	public breadthFirstSearching(): string[] {
+	public breadthFirstSearch(): string[] {
 		/**
 		 * To store the visited nodes, you need to create two queues,
 		 * One called queue, which stores the elements which are waiting
@@ -240,31 +226,64 @@ export default class BinarySearchTree {
 		return visited;
 	}
 
-	public depthFirstSearching_preOrder(): string[] {
+	/**
+	 * A depth-first searching method using the pre-order technique
+	 * to traverse through the binary search tree, looking at all of
+	 * the nodes in it at least once, and returning those nodes'
+	 * values in one array.
+	 */
+	public depthFirstSearchPreOrder = (): string[] => {
+		/**
+		 * Create a string array to place all of the visited nodes'
+		 * values
+		 */
+		const visited: string[] = [];
+		/**
+		 * Traverse is a helper function to recursively go through all
+		 * of the nodes in the binary tree to check for left and right
+		 * values from that node, and to push the current nodes value
+		 * in the visited array.
+		 * @param node - the node which is currently being traversed
+		 * to check for left & right values.
+		 */
+		const traverse = (node: Node): void => {
+			/**
+			 * Push the current nodes value into the visited array.
+			 */
+			visited.push(node.value);
+			/**
+			 * If there are right or left properties on the current
+			 * node, then traverse need to be recursively called to
+			 * push these nodes' value into the visited array, and
+			 * to check if that node has left & right properties to
+			 * recursively check.
+			 */
+			if (node.left) traverse(node.left);
+			if (node.right) traverse(node.right);
+		};
+		/**
+		 * Run traverse on the root element so it can begin recursively
+		 * going through all of the elements, then return the visited
+		 * array after all of the nodes have been checked.
+		 */
+		traverse(this.root);
+		console.log(visited);
+		return visited;
+	};
+
+	public depthFirstSearchPostOrder = (): string[] => {
 		const visited: string[] = [];
 		const traverse = (node: Node): void => {
+			if (node.left) traverse(node.left);
+			if (node.right) traverse(node.right);
 			visited.push(node.value);
-			node.left && traverse(node.left);
-			node.right && traverse(node.right);
 		};
 		traverse(this.root);
 		console.log(visited);
 		return visited;
-	}
+	};
 
-	public depthFirstSearching_postOrder(): string[] {
-		const visited: string[] = [];
-		const traverse = (node: Node): void => {
-			node.left && traverse(node.left);
-			node.right && traverse(node.right);
-			visited.push(node.value);
-		};
-		traverse(this.root);
-		console.log(visited);
-		return visited;
-	}
-
-	public depthFirstSearching_inOrder(): string[] {
+	public depthFirstSearchInOrder(): string[] {
 		const visited: string[] = [];
 		const traverse = (node: Node): void => {
 			if (node.left) {
@@ -283,12 +302,12 @@ export default class BinarySearchTree {
 
 const tree = new BinarySearchTree([10, 6, 8, 3, 20, 15]);
 /**
- *           10
- *        6      15
- *     3     8      20
+ *            10
+ *        6       15
+ *     3     8  -    20
  */
 
-tree.breadthFirstSearching();
-tree.depthFirstSearching_preOrder();
-tree.depthFirstSearching_postOrder();
-tree.depthFirstSearching_inOrder();
+tree.breadthFirstSearch();
+tree.depthFirstSearchPreOrder();
+tree.depthFirstSearchPostOrder();
+tree.depthFirstSearchInOrder();
