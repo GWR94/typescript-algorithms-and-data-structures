@@ -1,8 +1,9 @@
 function fib(num: number) {
-	if (num <= 2) {
-		return 1;
-	}
+	if (num < 0) return null;
+	else if (num <= 2 && num > 0) return 1;
 	return fib(num - 2) + fib(num - 1);
 }
 
-console.log(fib(10));
+console.log(fib(2));
+
+export { fib as default };
