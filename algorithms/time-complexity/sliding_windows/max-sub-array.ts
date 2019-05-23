@@ -1,4 +1,4 @@
-function maxSubArray(arr: number[], num: number) {
+function maxSubArray(arr: number[], num: number): number {
 	/**
 	 * If the length of arr is smaller than num, then we should
 	 * return null, as it would be impossible to get a subarray

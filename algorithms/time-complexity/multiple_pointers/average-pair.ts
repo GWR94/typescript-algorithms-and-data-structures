@@ -1,4 +1,4 @@
-function averagePair(arr: number[], num: number) {
+function averagePair(arr: number[], num: number): boolean {
 	let i: number = 0;
 	let j: number = 1;
 	while (i < arr.length - 1) {

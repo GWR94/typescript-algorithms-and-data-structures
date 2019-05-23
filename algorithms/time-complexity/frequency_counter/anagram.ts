@@ -1,4 +1,4 @@
-function anagram(str1: string, str2: string) {
+function anagram(str1: string, str2: string): boolean {
 	const lookup: object = {};
 
 	if (str1.length !== str2.length) {
@@ -14,12 +14,13 @@ function anagram(str1: string, str2: string) {
 	for (const letter of str2) {
 		if (!lookup[letter]) {
 			// if letter isn't in the object, or its value is zero, return false.
-			return console.log(`${str1} is not an anagram of ${str2}`);
+			console.log(`${str1} is not an anagram of ${str2}`);
+			return false;
 		}
 		lookup[letter] -= 1; // else take one away from its value and continue loop.
 	}
-
-	return console.log(`${str1} is an anagram of ${str2}`);
+	console.log(`${str1} is an anagram of ${str2}`);
+	return true;
 	// if loop is completed without returning false, then it's an anagram so return true.
 }
 

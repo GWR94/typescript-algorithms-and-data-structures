@@ -1,4 +1,4 @@
-function sameSquared(arr1: number[], arr2: number[]) {
+function sameSquared(arr1: number[], arr2: number[]): boolean {
 	const count1: object = {};
 	const count2: object = {};
 	for (const val1 of arr1) {

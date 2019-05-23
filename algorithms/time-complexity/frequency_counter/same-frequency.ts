@@ -1,4 +1,4 @@
-function sameFrequency(num1: any, num2: any) {
+function sameFrequency(num1: any, num2: any): boolean {
 	const lookup: object = {};
 	num1 = num1.toString();
 	num2 = num2.toString();

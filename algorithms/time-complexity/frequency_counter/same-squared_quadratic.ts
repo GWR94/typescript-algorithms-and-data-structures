@@ -1,4 +1,4 @@
-function sameSquaredQuad(arr1: number[], arr2: number[]) {
+function sameSquaredQuad(arr1: number[], arr2: number[]): boolean {
 	for (const i of arr1) {
 		const char: number = arr1[i];
 		const index: number = arr2.indexOf(char ** 2);

@@ -1,4 +1,4 @@
-function areThereDuplicatesSets(arr: any[]) {
+function areThereDuplicatesSets(arr: any[]): boolean {
 	return new Set(arr).size !== arr.length;
 	/*
         A set removes all duplicate values, so if the the length of

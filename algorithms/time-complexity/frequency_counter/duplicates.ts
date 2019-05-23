@@ -1,4 +1,4 @@
-function areThereDuplicates(arr: any[]) {
+function areThereDuplicates(arr: any[]): boolean {
 	const lookup: object = {};
 	for (const item of arr) {
 		lookup[item] = (lookup[item] || 0) + 1;

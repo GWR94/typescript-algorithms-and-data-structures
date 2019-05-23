@@ -1,4 +1,4 @@
-function maxSubArrayQuad(arr: number[], num: number) {
+function maxSubArrayQuad(arr: number[], num: number): number {
 	/**
 	 * If the number is larger than the array length, there can be
 	 * no subarray that would fit, so return null
