@@ -1,5 +1,10 @@
 import Node from "./Node";
 
+/**
+ * TODO
+ * [ ] Check through all binary search tree comments and markdown.
+ */
+
 export default class BinarySearchTree {
 	public root: Node;
 	constructor(data?: any[]) {

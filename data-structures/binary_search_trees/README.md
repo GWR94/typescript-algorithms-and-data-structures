@@ -65,19 +65,19 @@ Depth-first searching is where you are going down vertically through the tree, a
 
 Pre order is a depth-first searching technique where you visit the node first, then traverse through the left and the right nodes of that current node recursively. Essentially you push the node into a visited array *before* you traverse through other nodes. The root node will always be the first node in this array, and we would add each of its children (left then right) after.
 
-<img src="img/dfs-preorder.png" height=200 />
+<img src="img/dfs-preOrder.png" height=200 />
 
 ## **Post Order**
 
 Post order is a depth-first searching technique which is similar as pre order, except you push the nodes to the visited array *after* the all of a node has it's children visited. The root node will always be the last node added to the visited array.
 
-<img src="img/dfs-postorder.png" height=200 />
+<img src="img/dfs-postOrder.png" height=200 />
 
 ## **In Order**
 
 In order is is similar to both of the other depth-first searching techniques, except in order returns a sorted visited array (if the tree is a binary-search tree). In order traverses through all of the left nodes before pushing them to the visited array, the right nodes are then traversed, and pushed to the visited array.
 
-<img src="img/dfs-inorder.png" height=200 />
+<img src="img/dfs-inOrder.png" height=200 />
 
 ## **Breadth-First Search or Depth-First Search**
 
