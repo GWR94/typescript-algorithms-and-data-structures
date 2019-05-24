@@ -83,7 +83,7 @@ In order is is similar to both of the other depth-first searching techniques, ex
 
 ### **Time Complexity**
 
-The time complexity for breadth-first searching and depth-first searching is exactly the same, because we always have to visit the same amount of nodes one time, and we never have to visit the same element more than one time. The time complexity for both is *O(n + m)*, where *n* is the number of vertices, and *m* is the number of edges in the tree.
+The time complexity for breadth-first searching and depth-first searching is exactly the same, because we always have to visit the same amount of nodes one time, and we never have to visit the same element more than one time. The time complexity for both is $O(n + m)$, where $n$ is the number of vertices, and $m$ is the number of edges in the tree.
 
 ### **Space Complexity**
 
