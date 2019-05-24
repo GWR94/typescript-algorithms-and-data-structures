@@ -242,7 +242,8 @@ export default class BinarySearchTree {
 		 * Traverse is a helper function to recursively go through all
 		 * of the nodes in the binary tree to check for left and right
 		 * values from that node, and to push the current nodes value
-		 * in the visited array.
+		 * in the visited array before the nodes' left and right have
+		 * been traversed.
 		 * @param node - the node which is currently being traversed
 		 * to check for left & right values.
 		 */
@@ -271,29 +272,74 @@ export default class BinarySearchTree {
 		return visited;
 	};
 
+	/**
+	 * A depth-first searching method using the post-order technique
+	 * to traverse through the binary search tree, looking at all of
+	 * the nodes in it at least once, and returning those nodes'
+	 * values in one array.
+	 */
 	public depthFirstSearchPostOrder = (): string[] => {
+		/**
+		 * Create a string array to place all of the visited nodes'
+		 * values
+		 */
 		const visited: string[] = [];
+		/**
+		 * Traverse is a helper function to recursively go through all
+		 * of the nodes in the binary tree to check for left and right
+		 * values from that node, and to push the current nodes value
+		 * in the visited array, after both the nodes' left and right
+		 * have been traversed.
+		 * @param node - the node which is currently being traversed
+		 * to check for left & right values.
+		 */
 		const traverse = (node: Node): void => {
 			if (node.left) traverse(node.left);
 			if (node.right) traverse(node.right);
 			visited.push(node.value);
 		};
+		/**
+		 * Run traverse on the root element so it can begin recursively
+		 * going through all of the elements, then return the visited
+		 * array after all of the nodes have been checked.
+		 */
 		traverse(this.root);
 		console.log(visited);
 		return visited;
 	};
 
+	/**
+	 * A depth-first searching method using the in-order technique
+	 * to traverse through the binary search tree, looking at all of
+	 * the nodes in it at least once, and returning those nodes'
+	 * values in one array. All of the items in the array will be
+	 * sorted.
+	 */
 	public depthFirstSearchInOrder(): string[] {
+		/**
+		 * Push the current nodes value into the visited array.
+		 */
 		const visited: string[] = [];
+		/**
+		 * Traverse is a helper function to recursively go through all
+		 * of the nodes in the binary tree to check for left and right
+		 * values from that node, and to push the value of the left nodes'
+		 * after all of there are no more left nodes', and pushes all of
+		 * the right nodes when there are no more right nodes' to the
+		 * current nodes value in the visited array.
+		 * @param node - the node which is currently being traversed
+		 * to check for left & right values.
+		 */
 		const traverse = (node: Node): void => {
-			if (node.left) {
-				traverse(node.left);
-			}
+			if (node.left) traverse(node.left);
 			visited.push(node.value);
-			if (node.right) {
-				traverse(node.right);
-			}
+			if (node.right) traverse(node.right);
 		};
+		/**
+		 * Run traverse on the root element so it can begin recursively
+		 * going through all of the elements, then return the visited
+		 * array after all of the nodes have been checked.
+		 */
 		traverse(this.root);
 		console.log(visited);
 		return visited;
