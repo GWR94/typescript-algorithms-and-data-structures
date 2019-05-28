@@ -66,7 +66,7 @@ class MinBinaryHeap {
 		}
 	};
 
-	private swap = (idx1: number, idx2: number) => {
+	protected swap = (idx1: number, idx2: number) => {
 		const arr = this.values;
 		[arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
 	};

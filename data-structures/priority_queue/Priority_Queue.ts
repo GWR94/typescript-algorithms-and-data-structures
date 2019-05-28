@@ -7,7 +7,7 @@ class Node {
 
 export default class PriorityQueue {
 	private values: Node[];
-	constructor(data?: any[]) {
+	constructor(data?: object[]) {
 		this.values = [];
 		if (data) data.forEach(node => this.enqueue(node.value, node.priority));
 	}
@@ -85,15 +85,40 @@ export default class PriorityQueue {
 	};
 }
 
-const queue = new PriorityQueue();
-queue.enqueue("test", 4);
-queue.enqueue("test", 1);
-queue.enqueue("test", 2);
-queue.enqueue("test", 1);
-queue.enqueue("test", 0);
-queue.enqueue("test", 0);
-queue.enqueue("test", 0);
-queue.enqueue("test", 1);
+const queue = new PriorityQueue([
+	{
+		value: "Not Important",
+		priority: 4
+	},
+	{
+		value: "Important",
+		priority: 1
+	},
+	{
+		value: "Pretty Important",
+		priority: 2
+	},
+	{
+		value: "Important",
+		priority: 1
+	},
+	{
+		value: "Incredibly Important",
+		priority: 0
+	},
+	{
+		value: "Incredibly Important",
+		priority: 0
+	},
+	{
+		value: "Incredibly Important",
+		priority: 0
+	},
+	{
+		value: "Important",
+		priority: 1
+	}
+]);
 queue.printQueue();
 /**
  *            0
