@@ -1,0 +1,3 @@
+# **Priority Queues**
+
+A priority queue is a data structure where each elements have a priority. Elements with higher priorities are served before elements with lower priority. Priority queues are an abstract concept, so they can be created in a variety of ways. An array can be used to construct a priority queue, however it can be inefficient to loop through the array to compare its elements priority every time a new element is added. A better way to construct a priority queue is to use a binary heap.

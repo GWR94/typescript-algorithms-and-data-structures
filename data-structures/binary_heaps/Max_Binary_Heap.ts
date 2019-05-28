@@ -19,7 +19,7 @@ export default class MaxBinaryHeap {
 	 * @param value - the value to insert into the binary
 	 * tree
 	 */
-	public insert = (value: number | string): void => {
+	public insert = (value: any): void => {
 		/**
 		 * Push the value to the end of the array, and then
 		 * use the bubble up method to move the value up
@@ -34,13 +34,13 @@ export default class MaxBinaryHeap {
 	 * heap, and rearrange all of the other elements so it
 	 * is a valid heap once more.
 	 */
-	public extractMax = (): number | string => {
+	public extractMax = (): any => {
 		/**
 		 * Swap the end value with the current max value
 		 * (root), and store them in constants.
 		 */
-		const max: number | string = this.values[0];
-		const end: number | string = this.values.pop();
+		const max: any = this.values[0];
+		const end: any = this.values.pop();
 		if (this.values.length > 0) {
 			this.values[0] = end;
 			/**
@@ -79,7 +79,7 @@ export default class MaxBinaryHeap {
 		 * that index so it can be compared later.
 		 */
 		let idx: number = this.values.length - 1;
-		const element: number | string = this.values[idx];
+		const element: any = this.values[idx];
 		/**
 		 * Loop through the binary heap while the index is valid
 		 * (above 0).
@@ -91,7 +91,7 @@ export default class MaxBinaryHeap {
 			 * index in the parent constant.
 			 */
 			const parentIdx: number = Math.floor((idx - 1) / 2);
-			const parent: number | string = this.values[parentIdx];
+			const parent: any = this.values[parentIdx];
 			/**
 			 * If the parent is equal to or larger than the element,
 			 * then break the loop as it's in its correct spot.
@@ -121,13 +121,13 @@ export default class MaxBinaryHeap {
 		 * because the first element in the values array is the current
 		 * variable that needs to be compared to others.
 		 */
-		let idx = 0;
-		const element = this.values[0];
+		let idx: number = 0;
+		const element: any = this.values[0];
 		/**
 		 * Store the length of the values array so it can be used to check
 		 * for a valid index in the while loop.
 		 */
-		const length = this.values.length;
+		const length: number = this.values.length;
 		while (true) {
 			/**
 			 * Save the index of the left and right child of the current index
@@ -136,8 +136,7 @@ export default class MaxBinaryHeap {
 			 */
 			const leftIdx: number = 2 * idx + 1;
 			const rightIdx: number = 2 * idx + 2;
-			let leftChild: number | string;
-			let rightChild: number | string;
+			let leftChild: any, rightChild: any;
 			/**
 			 * Create a swap variable and initialise it to be null, so it can
 			 * later be set to the left or right child to swap at the end of the
