@@ -10,7 +10,10 @@ export default class MaxBinaryHeap {
 		if (data) data.forEach(element => this.insert(element));
 	}
 
-	public getValues = (): void => {
+	/**
+	 * Method to print out the values from the binary heap
+	 */
+	public printHeap = (): void => {
 		return console.log(this.values);
 	};
 
@@ -36,11 +39,18 @@ export default class MaxBinaryHeap {
 	 */
 	public extractMax = (): any => {
 		/**
-		 * Swap the end value with the current max value
-		 * (root), and store them in constants.
+		 * Pop the last value from the end of the values array, and
+		 * save it in a constant for swapping the value if necessary.
+		 * Store the max element (root) in a constant to return as the
+		 * element which is being returned from the method.
 		 */
 		const max: any = this.values[0];
 		const end: any = this.values.pop();
+		/**
+		 * If the length of the values array is larger than 0 after
+		 * popping the last element, then set the first element in the
+		 * values array to be the end element.
+		 */
 		if (this.values.length > 0) {
 			this.values[0] = end;
 			/**
@@ -48,11 +58,11 @@ export default class MaxBinaryHeap {
 			 * end (now first) element to it's correct spot.
 			 */
 			this.sinkDown();
-			/**
-			 * Return the max elements as this is what was
-			 * removed from the heap.
-			 */
 		}
+		/**
+		 * Return the max element as this is what was removed from
+		 * the heap.
+		 */
 		return max;
 	};
 
@@ -71,7 +81,7 @@ export default class MaxBinaryHeap {
 	 * been added to the end, as it's more than likely not in
 	 * its correct spot.
 	 */
-	protected bubbleUp = (): void => {
+	private bubbleUp = (): void => {
 		/**
 		 * Create a let to store the index which the element that
 		 * was pushed into the array (the last element in the
@@ -114,9 +124,9 @@ export default class MaxBinaryHeap {
 	 * has moved the last element to the root, because that element will
 	 * be incorrectly placed for a valid binary heap.
 	 */
-	protected sinkDown = (): void => {
+	private sinkDown = (): void => {
 		/**
-		 * Create a variable to store the current index, and set it to 0,
+		 * Create a let to store the current index, and set it to 0;
 		 * then set the element constant to be the value from idx
 		 * because the first element in the values array is the current
 		 * variable that needs to be compared to others.
@@ -155,7 +165,7 @@ export default class MaxBinaryHeap {
 			}
 			/**
 			 * If index of the right child is less than the length, then it is a
-			 * valid value, so rightChild can eb set to the right child's index.
+			 * valid value, so rightChild can be set to the right child's index.
 			 */
 			if (rightIdx < length) {
 				rightChild = this.values[rightIdx];
@@ -165,7 +175,7 @@ export default class MaxBinaryHeap {
 				 * needs to be set to the right child's index. If there was a swap
 				 * in the previous if statement (swap is not null) and the right
 				 * child is larger than the left child, swap should be set to be
-				 * the right child's index as you should only swap the larger element.
+				 * the right child's index as you should swap the larger element.
 				 */
 				if (
 					(swap === null && rightChild > element) ||
@@ -191,9 +201,9 @@ export default class MaxBinaryHeap {
 }
 
 const heap = new MaxBinaryHeap([55, 39, 27, 12, 33, 41, 18]);
-heap.getValues();
+heap.printHeap();
 heap.extractMax();
-heap.getValues();
+heap.printHeap();
 
 // [55, 39, 41, 18, 27, 12, 33]
 // [41, 39, 33, 18, 27, 12]
