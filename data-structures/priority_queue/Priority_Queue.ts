@@ -5,9 +5,14 @@ class Node {
 	}
 }
 
+interface Data {
+	value: number | string | object;
+	priority: number;
+}
+
 export default class PriorityQueue {
 	private values: Node[];
-	constructor(data?: object[]) {
+	constructor(data?: Node[]) {
 		this.values = [];
 		if (data) data.forEach(node => this.enqueue(node.value, node.priority));
 	}

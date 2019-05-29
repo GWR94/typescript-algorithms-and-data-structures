@@ -9,7 +9,8 @@
 		"max-classes-per-file": false,
 		"curly": false,
 		"object-literal-sort-keys": false,
-		"one-variable-per-declaration": false
+		"one-variable-per-declaration": false,
+		"interface-name": false
 	},
 	"linterOptions": {
 		"exclude": ["node_modules/**"]
