@@ -31,7 +31,7 @@ class MinBinaryHeap {
 		while (true) {
 			const leftIdx: number = 2 * idx + 1;
 			const rightIdx: number = 2 * idx + 2;
-			let leftChild, rightChild;
+			let leftChild: number, rightChild: number;
 			let swap: number = null;
 			if (leftIdx < length) {
 				leftChild = this.values[leftIdx];

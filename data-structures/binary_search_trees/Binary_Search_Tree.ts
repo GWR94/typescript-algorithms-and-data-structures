@@ -131,9 +131,7 @@ export default class BinarySearchTree {
 				 * method, then the current node should be returned.
 				 */
 				if (current.value === value) return current;
-				if (!current.right) {
-					return null;
-				} else if (current.value < value) {
+				if (current.value < value) {
 					/**
 					 * If the value of the current node is smaller than the value input into
 					 * the method, then we need to check if it has a current.right. If it does,
@@ -141,6 +139,9 @@ export default class BinarySearchTree {
 					 * traversing through the tree; if it doesn't, then the node is not in the
 					 * binary search tree, so we need to return null
 					 */
+					if (!current.right) {
+						return null;
+					}
 					current = current.right;
 				} else {
 					/**
@@ -150,7 +151,9 @@ export default class BinarySearchTree {
 					 * traversing through the tree; if it doesn't, then the node is not in the
 					 * binary search tree, so we need to return null.
 					 */
-					if (!current.left) return null;
+					if (!current.left) {
+						return null;
+					}
 					current = current.left;
 				}
 			}

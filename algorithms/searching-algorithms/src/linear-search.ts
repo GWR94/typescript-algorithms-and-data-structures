@@ -8,17 +8,15 @@ import states from "../data/states";
  */
 
 export default function linearSearch(arr: any[], val: any): number {
-	if (!Array.isArray(arr) || val === undefined || val === null) return -1;
-	for (let i = 0; i < arr.length; i++) {
-		if (arr[i] === val) {
-			console.log(
-				`${val} found at index ${i} and took ${i + 1} iterations`
-			);
-			return i;
-		}
-	}
-	console.log(`${val} not found in array`);
-	return -1;
+  if (!Array.isArray(arr) || val === undefined || val === null) return -1;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === val) {
+      console.log(`${val} found at index ${i} and took ${i + 1} iterations`);
+      return i;
+    }
+  }
+  console.log(`${val} not found in array`);
+  return -1;
 }
 
 linearSearch(states, "Indiana");

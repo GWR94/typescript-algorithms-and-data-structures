@@ -146,7 +146,7 @@ export default class MaxBinaryHeap {
 			 */
 			const leftIdx: number = 2 * idx + 1;
 			const rightIdx: number = 2 * idx + 2;
-			let leftChild: any, rightChild: any;
+			let leftChild, rightChild: any;
 			/**
 			 * Create a swap variable and initialise it to be null, so it can
 			 * later be set to the left or right child to swap at the end of the

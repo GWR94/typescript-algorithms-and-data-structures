@@ -128,6 +128,24 @@ export default class DoublyLinkedList {
 		}
 		console.log(arr);
 	}
+
+	public reverse() {
+		let current = this.head;
+		this.head = this.tail;
+		this.tail = current;
+		let prev;
+		let next;
+		let count = 0;
+		while (count < this.length) {
+			next = current.next;
+			prev = current.prev;
+			current.prev = current.next;
+			current.next = prev;
+			current = next;
+			count++;
+		}
+		return this;
+	}
 }
 
 const list = new DoublyLinkedList([100, 200, 300, 400, 500]);
