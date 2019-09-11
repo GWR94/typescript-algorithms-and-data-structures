@@ -5,12 +5,12 @@
  * @param num number to count down from.
  */
 function countDown(num: number, decrement: number = 1): void {
-	if (num <= 0) {
-		return console.log("All done!");
-	}
-	console.log(num);
-	num -= decrement;
-	countDown(num, decrement);
+  if (num <= 0) {
+    return console.log("All done!");
+  }
+  console.log(num);
+  num -= decrement;
+  countDown(num, decrement);
 }
 
 countDown(5, 2);
@@ -23,11 +23,11 @@ countDown(10);
  * @param num the number to which all previous numbers in
  * sequence must add together to get the total (3: 1+2+3=6)
  */
-function sumRange(num: number) {
-	if (num === 1) {
-		return 1;
-	}
-	return num + sumRange(num - 1);
+function sumRange(num: number): number {
+  if (num === 1) {
+    return 1;
+  }
+  return num + sumRange(num - 1);
 }
 
 console.log(sumRange(3));

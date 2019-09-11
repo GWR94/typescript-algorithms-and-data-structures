@@ -5,4 +5,4 @@ function range(min, max): number[] {
   arr = arr.concat(range(min + 1, max));
   return arr;
 }
-console.log(range(2, 9));
+console.log(range(1, 6));

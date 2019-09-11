@@ -1,17 +1,13 @@
-function collectOdds(arr: number[]): number[] {
-  let newArr: number[] = [];
-  if (arr.length === 0) {
-    return newArr;
+import states from "./algorithms/searching-algorithms/data/states";
+
+function binarySearch(arr, val, min = 0, max = arr.length - 1): number {
+  while (min <= max) {
+    const mid = Math.floor((min + max) / 2);
+    if (arr[mid] === val) return mid;
+    return arr[mid] > val
+      ? binarySearch(arr, val, min, mid - 1)
+      : binarySearch(arr, val, mid + 1, max);
   }
-  if (arr[0] % 2 !== 0) {
-    newArr.push(arr[0]);
-  }
-  newArr = newArr.concat(collectOdds(arr.slice(1)));
-  return newArr;
+  return -1;
 }
-
-console.log(
-  collectOdds([1, 2, 3, 4, 5]); // [1,3,5]
-);
-
-
+console.log(binarySearch(states, "Texas"));
