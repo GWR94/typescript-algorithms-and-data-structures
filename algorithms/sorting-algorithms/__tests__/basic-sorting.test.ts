@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 
-import bubbleSort from "../src/basic/bubble-sort/bubble-sort";
-import insertionSort from "../src/basic/insertion-sort";
-import selectionSort from "../src/basic/selection-sort";
+import bubbleSort from "../src/quadratic-sorting/bubble-sort/bubble-sort";
+import insertionSort from "../src/quadratic-sorting/insertion-sort/insertion-sort";
+import selectionSort from "../src/quadratic-sorting/selection-sort/selection-sort";
 
 describe("Sorting test suite", () => {
   describe("Unsorted numeric array test cases", () => {

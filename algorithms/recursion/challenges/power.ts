@@ -6,6 +6,13 @@
  */
 export default function power(base: number, exponent: number): number {
   /**
+   * If base is 0, then 0 must be returned as any exponent of zero will always
+   * return 0.
+   */
+  if (base === 0) {
+    return 0;
+  }
+  /**
    * base case - if the number exponent is zero, return 1.
    */
   if (exponent === 0) {
@@ -24,4 +31,14 @@ export default function power(base: number, exponent: number): number {
   return base * power(base, exponent - 1);
 }
 
-console.log(power(6, 2));
+console.log(power(4, 4));
+
+function powerIterative(base: number, exponent: number): number {
+  let sum = 1;
+  for (let i = exponent; i > 0; i--) {
+    sum *= base;
+  }
+  return sum;
+}
+
+console.log(powerIterative(4, 4));

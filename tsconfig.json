@@ -1,14 +1,15 @@
 {
-	"compilerOptions": {
-		"plugins": [
-			{
-				"name": "typescript-tslint-plugin"
-			}
-		],
-		"target": "es5",
-		"lib": ["esnext"],
-		"moduleResolution": "node",
-		"outDir": "out",
-		"sourceMap": true
-	}
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin"
+      }
+    ],
+    "target": "es5",
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "outDir": "out",
+    "sourceMap": true,
+    "downlevelIteration": true
+  }
 }

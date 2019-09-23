@@ -3,7 +3,7 @@
  * returning it.
  */
 const swap = (arr: any[], idx1: number, idx2: number): void => {
-	[arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
 };
 
 /**
@@ -11,10 +11,10 @@ const swap = (arr: any[], idx1: number, idx2: number): void => {
  * returning it
  */
 function es5Swap(arr: any[], idx1: number, idx2: number): any[] {
-	const temp = arr[idx1];
-	arr[idx1] = arr[idx2];
-	arr[idx2] = temp;
-	return arr;
+  const temp = arr[idx1];
+  arr[idx1] = arr[idx2];
+  arr[idx2] = temp;
+  return arr;
 }
 
 export { swap as default, es5Swap };

@@ -3,7 +3,7 @@
  * numbers in the array.
  * @param arr - Numeric array to add all values from.
  */
-export default function productOfArray(arr: number[], sum = 0): number {
+export function productOfArray(arr: number[], sum = 0): number {
   /**
    * If an incorrect value is input (null or undefined), return null.
    */
@@ -25,3 +25,31 @@ export default function productOfArray(arr: number[], sum = 0): number {
 }
 
 console.log(productOfArray([1, 2, 3, 4, 5]));
+
+/**
+ * An iterative function which adds all of the values in the input array and
+ * returns it.
+ * @param arr - the numeric array which values will be combined to return
+ * the sum
+ */
+export function productOfArrayIterative(arr: number[]): number {
+  /**
+   * Check for invalid inputs such as undefined and null, return null if true.
+   */
+  if (!arr) return null;
+  /**
+   * Initialise the sum variable to accumulate all of the additions in the
+   * loop.
+   */
+  let sum = 0;
+  /**
+   * Loop through each element in the array
+   */
+  for (const num of arr) {
+    /**
+     * Add the current value to the sum variable through each iteration
+     */
+    sum += num;
+  }
+  return sum;
+}

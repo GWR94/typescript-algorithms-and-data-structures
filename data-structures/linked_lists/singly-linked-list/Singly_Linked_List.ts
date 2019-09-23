@@ -65,7 +65,7 @@ export default class SinglyLinkedList {
   }
 
   /**
-   * unshifting (inserting) a node to the start of
+   * unshifting (inserting) a node at the start of
    * the linked list.
    * @param val: value which we add to the node
    */

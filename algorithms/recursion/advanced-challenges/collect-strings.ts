@@ -3,7 +3,7 @@
  * of all of the strings in that object.
  * @param obj - the object which will contain strings and other values.
  */
-function collectStrings(obj): string[] {
+export function collectStrings(obj): string[] {
   /**
    * Initialise an array to store the strings from obj into it.
    */

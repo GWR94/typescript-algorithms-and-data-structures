@@ -6,6 +6,11 @@
  */
 function isPalindrome(str: string): boolean {
   /**
+   * Remove all non-word characters from the string, such as punctuation and/or
+   * whitespace.
+   */
+  str = str.toLowerCase().replace(/[\W]/g, "");
+  /**
    * If the first letter doesn't match the last element in the string,
    * then the string obviously isn't a palindrome, so return false
    */
@@ -24,3 +29,20 @@ function isPalindrome(str: string): boolean {
 }
 
 console.log(isPalindrome("sabcddcbas"));
+
+function isPalindromeIterative(str: string): boolean {
+  /**
+   * Remove all non-word characters from the string, such as punctuation and/or
+   * whitespace.
+   */
+  const s = str.toLowerCase().replace(/[\W_]/g, "");
+  /**
+   * Place s into an array using the spread (...) operator, reverse it, and join
+   * it back together with join(""). If the strings are the same, then str is a
+   * palindrome, so true will be returned. If it's different, then str is not
+   * a palindrome, so it will return false.
+   */
+  return s === [...s].reverse().join("");
+}
+
+console.log(isPalindromeIterative("race!! car!!???"));
