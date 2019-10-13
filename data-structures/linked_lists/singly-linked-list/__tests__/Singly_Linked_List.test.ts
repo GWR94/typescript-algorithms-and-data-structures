@@ -232,7 +232,7 @@ describe("Singly Linked List test suite", () => {
       list.reverse();
       expect(list.print()).toStrictEqual([1]);
     });
-    it("should the same list if the list is empty", () => {
+    it("should return the same list if the list is empty", () => {
       list = new SinglyLinkedList();
       list.reverse();
       expect(list.print()).toStrictEqual([]);
