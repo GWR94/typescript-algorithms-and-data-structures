@@ -38,7 +38,7 @@ children, so you can only have zero, one or two children from one parent.
 
 ### **Binary Search Trees**
 
-Binary search trees are a special type of a binary trees. It has the same
+Binary search trees are a special type of a binary tree. It has the same
 functionality of a binary tree where a parent can only have 0-2 children,
 but the nodes are sorted, meaning that the node to the left of a parent is
 always **less** than the parent, and the node to right is always **more**

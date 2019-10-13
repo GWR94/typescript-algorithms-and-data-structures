@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { es5Swap as swap } from "../../../utils/swap";
 
 /**

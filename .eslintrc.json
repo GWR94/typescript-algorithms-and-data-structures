@@ -1,62 +1,63 @@
 {
-	"env": {
-		"browser": true,
-		"es6": true,
-		"node": true,
-		"commonjs": true
-	},
-	"extends": [
-		"airbnb-typescript/base",
-		"eslint:recommended",
-		"plugin:@typescript-eslint/eslint-recommended",
-		"plugin:@typescript-eslint/recommended",
-		"prettier/@typescript-eslint",
-		"prettier/babel",
-		"prettier",
-		"plugin:prettier/recommended"
-	],
-	"globals": {
-		"Atomics": "readonly",
-		"SharedArrayBuffer": "readonly"
-	},
-	"parser": "@typescript-eslint/parser",
-	"parserOptions": {
-		"ecmaFeatures": {
-			"impliedStrict": true,
-			"jsx": true
-		},
-		"ecmaVersion": 2018,
-		"sourceType": "module",
-		"project": "tsconfig.json"
-	},
-	"plugins": ["@typescript-eslint", "prettier"],
-	"rules": {
-		"quotes": "off",
-		"@typescript-eslint/no-var-requires": "off",
-		"no-console": "off",
-		"jsx-a11y/click-events-have-key-events": "off",
-		"no-plusplus": "off",
-		"no-restricted-syntax": "off",
-		"no-unused-expressions": [
-			"warn",
-			{ "allowShortCircuit": true, "allowTernary": true }
-		],
-		"linebreak-style": "off",
-		"no-param-reassign": "off",
-		"no-shadow": "off",
-		"class-methods-use-this": "error",
-		"no-nested-ternary": "off",
-		"no-underscore-dangle": "off",
-		"lines-between-class-members": "off",
-		"no-prototype-builtins": "off",
-		"jsx-a11y/no-noninteractive-element-interactions": "off",
-		"jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
-		"no-restricted-globals": "off",
-		"no-return-assign": "off",
-		"func-names": "off",
-		"global-require": "off",
-		"no-loop-func": "off",
-		"no-await-in-loop": "off",
-		"import/prefer-default-export": "off"
-	}
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "commonjs": true
+  },
+  "extends": [
+    "airbnb-typescript/base",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "prettier/babel",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
+    "quotes": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "no-console": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "no-plusplus": "off",
+    "no-restricted-syntax": "off",
+    "no-unused-expressions": [
+      "warn",
+      { "allowShortCircuit": true, "allowTernary": true }
+    ],
+    "linebreak-style": "off",
+    "no-param-reassign": "off",
+    "no-shadow": "off",
+    "class-methods-use-this": "error",
+    "no-nested-ternary": "off",
+    "no-underscore-dangle": "off",
+    "lines-between-class-members": "off",
+    "no-prototype-builtins": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
+    "no-restricted-globals": "off",
+    "no-return-assign": "off",
+    "func-names": "off",
+    "global-require": "off",
+    "no-loop-func": "off",
+    "no-await-in-loop": "off",
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-explicit-any": "off"
+  }
 }

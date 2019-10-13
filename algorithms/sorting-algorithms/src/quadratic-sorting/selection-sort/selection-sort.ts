@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import swap from "../../../utils/swap";
 
 /**
@@ -6,7 +5,7 @@ import swap from "../../../utils/swap";
  * which will be sorted and returned.
  * @param arr - the unsorted array which will be sorted and returned.
  */
-function selectionSort(arr: any[]): any[] {
+export default function selectionSort(arr: any[]): any[] {
   /**
    * Loop through each element in the array until i is equal to arr's length
    */

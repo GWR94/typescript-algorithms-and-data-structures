@@ -108,3 +108,33 @@ const mergeSort = (arr): any[] => {
 };
 
 console.log(mergeSort([9, 4, 5, 6, 1, 2, 3, 8, 7]));
+```
+
+## Big O of Merge Sort
+
+The best, worst and average case for mergeSort is $O(n ^{\log_n})$. Unlike all of the
+quadratic algorithms, there are no edge cases which affect different scenarios. Whatever
+happens, the algorithm will always split the array into two halved sub-arrays until all of
+the arrays are of 0 or 1 length.
+
+The space complexity for `mergeSort()` is $O(n)$/ linear space complexity, because the size
+of the array directly effects the amount of smaller sub-arrays that need to be created. This
+means that the space complexity must be linear, rather than const as all of the previous
+sorting algorithms have been.
+
+
+### Why $O(n ^{log_n})$?
+
+If there was an array of 8 elements, then it would take 3 operations until all sub-arrays
+are of 0 or 1 length. If there was an array of 32 elements, it would have to do 5
+decompositions until the sub-arrays are of 0 or 1 length. This relationship relates to
+$O(^{log_n})$, because this is saying 2 to the power of what makes n. For 8, it's 3; for 32
+its 5.
+
+The first $n$ from $O(n^{log_n})$ comes from the fact that we have to do $O(n)$ comparisons
+per decomposition - when we do the merge. If we have an array of 8 elements, every time the
+function is executed, all 8 elements will eventually be checked. No matter the size of the 
+array, all of the elements need to be compared. 
+
+$O(n^{log_n})$ is the best general time complexity for sorting algorithms, baring special
+requirements for things like radix sort.

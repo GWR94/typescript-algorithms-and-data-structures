@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * A sorting function which takes a (possibly) unsorted array, and returns
  * a sorted array.

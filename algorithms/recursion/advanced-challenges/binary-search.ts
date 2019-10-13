@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import states from "../../searching-algorithms/data/states";
 
 export function binarySearch(

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 /**
  * A recursive function which transforms one input array (arr) with an unknown amount of
  * nested arrays into one single array and returns it.
