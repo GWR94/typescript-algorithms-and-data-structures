@@ -71,7 +71,7 @@ export default function quickSort(arr, left = 0, right = arr.length - 1): any[] 
     /**
      * Call quickSort on all of the elements from the pivot + 1 until the right variable.
      */
-    quickSort(arr, pivotIdx + 1, right);
+    quickSort(arr, pivotIdx, right);
   }
   return arr;
 }

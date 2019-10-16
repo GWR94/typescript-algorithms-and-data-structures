@@ -28,6 +28,13 @@ export default class DoublyLinkedList {
 
   public pop(): Node {
     if (!this.head) return undefined;
+    if (this.length === 1) {
+      const prev = this.head;
+      this.head = null;
+      this.tail = null;
+      this.length = 0;
+      return prev;
+    }
     const popped: Node = this.tail;
     this.tail = this.tail.prev;
     this.tail.next = null;
@@ -82,7 +89,7 @@ export default class DoublyLinkedList {
 
   public set(val: any, index: number): boolean {
     const current = this.get(index);
-    if (current !== null) {
+    if (current) {
       current.val = val;
       return true;
     }
@@ -90,7 +97,7 @@ export default class DoublyLinkedList {
   }
 
   public insert(val: any, index: number): boolean {
-    if (this.length <= index || index < 0) return false;
+    if (this.length < index || index < 0) return false;
     if (index === 0) return !!this.unshift(val);
     if (index === this.length) return !!this.push(val);
     const newNode = new Node(val);
@@ -119,7 +126,7 @@ export default class DoublyLinkedList {
     return false;
   }
 
-  public print(): void {
+  public print(): any[] {
     const arr = [];
     let current = this.head;
     while (current) {
@@ -127,6 +134,7 @@ export default class DoublyLinkedList {
       current = current.next;
     }
     console.log(arr);
+    return arr;
   }
 
   public reverse(): DoublyLinkedList {
